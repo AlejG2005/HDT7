@@ -2,7 +2,7 @@
  import java.io.*;
  import java.util.*;
  public class LectorCSV {
-    private String direccion = "datosejemplo.csv";
+    private String direccion = "inventario_ropa_deportiva_30.csv";
     private BinarySearchTree<String, Producto> bstSKU;
     private BinarySearchTree<String, Producto> bstNombre;
  

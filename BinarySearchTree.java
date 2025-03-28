@@ -16,7 +16,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 
     private Node root;
 
-    /** Inserta un nuevo nodo en el BST */
+    /** Inserta un nuevo nodo en el árbol */
     public void insert(K key, V value) {
         root = insertRec(root, key, value);
     }
@@ -29,12 +29,12 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
         else if (key.compareTo(root.key) > 0)
             root.right = insertRec(root.right, key, value);
         else
-            root.value = value; // Si la clave ya existe, se actualiza el valor
+            root.value = value; 
 
         return root;
     }
 
-    /** Busca un nodo en el BST */
+    /** Encuentra un nodo en el árbol */
     public V search(K key) {
         return searchRec(root, key);
     }
@@ -46,7 +46,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
         return key.compareTo(root.key) < 0 ? searchRec(root.left, key) : searchRec(root.right, key);
     }
 
-    /** Recorre el BST en in-order y almacena los valores en una lista */
+    /** Crea un lista, luego recorre todo el árbol ordenandolo y dejandolo en la lista del inicio. */
     public List<V> inOrderTraversal() {
         List<V> lista = new ArrayList<>();
         inOrderRec(root, lista);
